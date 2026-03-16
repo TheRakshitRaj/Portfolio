@@ -1,0 +1,20 @@
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    /* Apple uses slightly larger radii */
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    /* Heavier black shadow */
+    transition: transform 0.4s var(--ease-apple), box-shadow 0.4s var(--ease-apple), background-color 0.4s;
+}
+
+.glass-card-hover:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    background: rgba(40, 40, 45, 0.7);
+    /* Slightly lighter on hover */
+    border-color: rgba(255, 255, 255, 0.15);
+}

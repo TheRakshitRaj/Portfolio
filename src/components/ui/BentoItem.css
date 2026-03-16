@@ -1,0 +1,135 @@
+.bento-item-wrapper {
+    position: relative;
+    border-radius: 20px;
+}
+
+/* Grid Spanning Logic */
+.bento-sm {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.bento-md {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.bento-lg {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.bento-wide {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.bento-tall {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.bento-glass-card {
+    background: rgba(28, 28, 30, 0.4);
+    height: 100%;
+    width: 100%;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.bento-glass-card:hover {
+    box-shadow: 0 8px 32px rgba(var(--accent-color), 0.2);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.bento-content {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.bento-icon {
+    font-size: 3rem;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.bento-glass-card:hover .bento-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.bento-title {
+    font-family: 'One Plus Sans Display', 'Inter', sans-serif;
+    /* Cleaner display font */
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    /* Slightly muted initially */
+    letter-spacing: 1.5px;
+    /* Cinematic tracking */
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0;
+    /* Let flex gap handle spacing */
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 5;
+}
+
+.bento-glass-card:hover .bento-title {
+    color: #fff;
+    text-shadow: 0 0 12px var(--accent-color);
+    /* Glow matching the icon */
+    transform: scale(1.05);
+    letter-spacing: 2px;
+    /* Slight expansion effect */
+}
+
+/* Glowing background effect */
+.bento-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, var(--accent-color) 0%, transparent 50%);
+    opacity: 0;
+    z-index: 1;
+    transform: scale(0.5);
+    transition: opacity 0.5s, transform 0.5s;
+    filter: blur(40px);
+}
+
+.bento-glass-card:hover .bento-glow {
+    opacity: 0.15;
+    transform: scale(1);
+}
+
+@media (max-width: 768px) {
+
+    .bento-md,
+    .bento-lg,
+    .bento-wide {
+        grid-column: span 1;
+    }
+
+    .bento-tall {
+        grid-row: span 1;
+    }
+
+    .bento-icon {
+        font-size: 2.5rem;
+    }
+}

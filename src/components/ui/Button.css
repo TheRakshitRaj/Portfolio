@@ -1,0 +1,59 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 20px;
+    /* Pill shape often used, or rounded rect */
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-apple);
+    border: 1px solid transparent;
+    outline: none;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: var(--accent-primary);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary:hover {
+    background: #1a87f0;
+    /* Slightly darker/richer blue */
+    box-shadow: 0 0 15px var(--accent-glow);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--accent-primary);
+    border: 1px solid rgba(41, 151, 255, 0.3);
+}
+
+.btn-outline:hover {
+    background: rgba(41, 151, 255, 0.05);
+    border-color: var(--accent-primary);
+}
+
+.btn svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}

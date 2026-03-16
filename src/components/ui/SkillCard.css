@@ -1,0 +1,88 @@
+.skill-card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s var(--ease-apple);
+}
+
+.skill-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    /* Apple-like highlight */
+    transform: translateX(2px);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.skill-icon {
+    font-size: 20px;
+    filter: grayscale(100%);
+    /* Desaturate for cleaner look */
+    transition: filter 0.3s;
+}
+
+.skill-item:hover .skill-icon {
+    filter: grayscale(0%);
+    /* Color on hover */
+}
+
+.skill-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color 0.3s;
+}
+
+.skill-item:hover .skill-name {
+    color: var(--text-primary);
+}
+
+/* Glowing border effect for skill cards */
+.skills-section .glass-card {
+    border: 2px solid var(--accent-primary);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        0 0 15px var(--accent-glow);
+    animation: borderGlow 8s ease-in-out infinite;
+}
+
+.skills-section .glass-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.6),
+        0 0 25px var(--accent-glow);
+    border-color: var(--accent-primary);
+    background: rgba(40, 40, 45, 0.7);
+    animation: borderGlow 6s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+    0%, 100% {
+        border-color: var(--accent-primary);
+        box-shadow: 
+            0 10px 30px rgba(0, 0, 0, 0.5),
+            0 0 15px var(--accent-glow);
+    }
+    50% {
+        border-color: rgba(41, 151, 255, 0.8);
+        box-shadow: 
+            0 10px 30px rgba(0, 0, 0, 0.5),
+            0 0 20px rgba(41, 151, 255, 0.6);
+    }
+}
