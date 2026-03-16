@@ -1,0 +1,59 @@
+npm run :-moz-drag-over.skills-section-bento {
+    padding: 100px 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+.bento-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 120px;
+    /* Increased from 100px to fit text */
+    gap: 16px;
+    max-width: 900px;
+    margin: 40px auto;
+    position: relative;
+    z-index: 2;
+}
+
+.skills-bg-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(41, 151, 255, 0.08) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Response Layout */
+@media (max-width: 1024px) {
+    .bento-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .bento-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 130px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bento-grid-container {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 120px;
+    }
+
+    /* Force all items to single blocks on mobile to ensure stacking */
+    .bento-wide,
+    .bento-tall,
+    .bento-lg,
+    .bento-md {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
