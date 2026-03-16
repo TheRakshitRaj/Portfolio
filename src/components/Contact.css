@@ -1,0 +1,91 @@
+.contact-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-label {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 16px;
+    transition: all 0.3s var(--ease-apple);
+    outline: none;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 4px rgba(41, 151, 255, 0.15);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: var(--text-tertiary);
+}
+
+.form-submit-wrapper {
+    margin-top: 32px;
+    width: 100%;
+}
+
+.form-submit-wrapper button {
+    width: 100%;
+}
+
+.form-status {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.status-success {
+    color: #32d74b;
+    /* Apple Green */
+}
+
+.status-error {
+    color: #ff453a;
+    /* Apple Red */
+}
+
+.contact-direct {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.contact-email-link {
+    font-size: 18px;
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.contact-email-link:hover {
+    opacity: 0.8;
+}
