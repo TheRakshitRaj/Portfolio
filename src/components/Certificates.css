@@ -1,0 +1,40 @@
+.certificates-section {
+    padding: 100px 5%;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.certificates-carousel-container {
+    width: 100%;
+    margin-top: 50px;
+    position: relative;
+    cursor: grab;
+    overflow: hidden;
+}
+
+.certificates-carousel-inner {
+    display: flex;
+    gap: 32px;
+    padding: 20px 0;
+}
+
+.certificate-card-wrapper {
+    min-width: 350px;
+    height: 420px;
+    position: relative;
+}
+
+.carousel-hint {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--text-tertiary);
+    font-size: 14px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .certificate-card-wrapper {
+        min-width: 280px;
+    }
+}
