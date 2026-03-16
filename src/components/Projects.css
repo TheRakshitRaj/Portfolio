@@ -1,0 +1,225 @@
+.projects-section-cinematic {
+    padding: 100px 5%;
+    min-height: 100vh;
+}
+
+/* Cinematic Container */
+.cinematic-container {
+    display: flex;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+    height: 600px;
+    /* Fixed height container */
+}
+
+/* Left List */
+.project-list {
+    flex: 0 0 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.project-list-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-list-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.project-list-item.active {
+    background: rgba(41, 151, 255, 0.08);
+    border-color: rgba(41, 151, 255, 0.2);
+}
+
+.project-list-num {
+    font-size: 14px;
+    color: var(--text-tertiary);
+    font-family: monospace;
+}
+
+.project-list-item.active .project-list-num {
+    color: var(--accent-primary);
+}
+
+.project-list-info {
+    flex: 1;
+}
+
+.project-list-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+    transition: color 0.3s;
+}
+
+.project-list-item.active .project-list-title {
+    color: var(--text-primary);
+}
+
+.project-list-tech {
+    font-size: 12px;
+    color: var(--text-tertiary);
+}
+
+.project-list-indicator {
+    width: 4px;
+    height: 0%;
+    background: var(--accent-primary);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: height 0.3s ease;
+    border-radius: 0 4px 4px 0;
+}
+
+.project-list-indicator.active {
+    height: 60%;
+}
+
+
+/* Right Preview Stage */
+.project-preview-stage {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    perspective: 1000px;
+}
+
+.preview-card {
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 28, 30, 0.6);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-image-wrapper {
+    height: 65%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.preview-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.preview-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(28, 28, 30, 1) 0%, transparent 100%);
+}
+
+.preview-content {
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.preview-content h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, #fff, #ccc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.preview-content p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 90%;
+}
+
+.preview-actions {
+    display: flex;
+    gap: 16px;
+}
+
+.preview-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s;
+}
+
+.preview-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.preview-btn.primary {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: white;
+}
+
+.preview-btn.primary:hover {
+    box-shadow: 0 4px 12px rgba(41, 151, 255, 0.3);
+}
+
+/* Responsive Visibility Helpers */
+.visible-mobile {
+    display: none;
+}
+
+.hidden-mobile {
+    display: flex;
+}
+
+@media (max-width: 1024px) {
+    .cinematic-container {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .visible-mobile {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .hidden-mobile {
+        display: none;
+    }
+
+    .projects-grid {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
