@@ -192,6 +192,19 @@
     box-shadow: 0 4px 12px rgba(41, 151, 255, 0.3);
 }
 
+.preview-btn.youtube {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff3333;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+.preview-btn.youtube:hover {
+    background: #ff0000;
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2);
+}
+
 /* Responsive Visibility Helpers */
 .visible-mobile {
     display: none;
