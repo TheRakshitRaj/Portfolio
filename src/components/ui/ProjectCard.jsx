@@ -3,7 +3,7 @@ import GlassCard from './GlassCard';
 import Button from './Button';
 import './ProjectCard.css';
 
-const ProjectCard = ({ title, description, techStack = [], githubLink, liveLink, image }) => {
+const ProjectCard = ({ title, description, techStack = [], githubLink, liveLink, youtubeLink, image }) => {
     return (
         <GlassCard hover={true} className="project-card-container">
             {/* Project Image */}
@@ -50,6 +50,11 @@ const ProjectCard = ({ title, description, techStack = [], githubLink, liveLink,
                 {liveLink && (
                     <Button variant="primary" href={liveLink} className="text-sm py-2">
                         Live Demo →
+                    </Button>
+                )}
+                {youtubeLink && (
+                    <Button variant="outline" href={youtubeLink} className="text-sm py-2" style={{ borderColor: 'rgba(255, 0, 0, 0.4)', color: '#ff3333' }}>
+                        Video →
                     </Button>
                 )}
             </div>
