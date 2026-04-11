@@ -3,7 +3,7 @@ import ProjectCard from './ui/ProjectCard'; // Fallback / Mobile
 import './Projects.css';
 import './About.css';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaYoutube } from 'react-icons/fa';
 
 const Projects = () => {
     const [activeId, setActiveId] = useState(0);
@@ -16,6 +16,7 @@ const Projects = () => {
             techStack: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Tailwind'],
             githubLink: 'https://github.com/TheRakshitRaj/Porsche-clone',
             liveLink: 'https://symphonious-croissant-ee6dd4.netlify.app/',
+            youtubeLink: 'https://youtube.com', // Placeholder
             image: 'https://res.cloudinary.com/dphtrtpjx/image/upload/v1770114279/Screenshot_2026-02-03_154955_fg1sqo.png'
         },
         {
@@ -23,26 +24,29 @@ const Projects = () => {
             title: 'Task Management App',
             description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features inspired by modern project management tools.',
             techStack: ['React', 'Firebase', 'MUI', 'Redux'],
-            githubLink: 'https://github.com/TheRakshitRaj/Porsche-clone',
-            liveLink: 'https://symphonious-croissant-ee6dd4.netlify.app/',
+            githubLink: 'https://github.com/TheRakshitRaj/Blix_clone',
+            liveLink: 'https://blix-clone.netlify.app/',
+            youtubeLink: '',
             image: 'https://res.cloudinary.com/dphtrtpjx/image/upload/v1770114269/Screenshot_2026-02-03_155233_p4mons.png'
         },
         {
             id: 2,
-            title: 'Weather Dashboard',
-            description: 'An interactive weather dashboard that displays current weather, forecasts, and weather maps. Features beautiful visualizations and location-based weather data.',
+            title: 'NZXT Gaming Website',
+            description: 'A full-stack e-commerce platform with payment integration, user authentication, and admin dashboard. Features include product catalog, shopping cart, and order management.',
             techStack: ['React', 'API', 'Chart.js'],
-            githubLink: '#',
-            liveLink: '#',
+            githubLink: 'https://github.com/TheRakshitRaj/NZXT_Clone',
+            liveLink: 'https://nzxt-clone-rr.netlify.app/',
+            youtubeLink: '',
             image: 'https://res.cloudinary.com/dphtrtpjx/image/upload/v1770114269/Screenshot_2026-02-03_155159_x7ixos.png'
         },
         {
             id: 3,
-            title: 'Social Media Clone',
+            title: 'SAcuityMD Clone Website',
             description: 'A feature-rich social media platform with posts, comments, likes, user profiles, and real-time notifications. Built with modern web technologies.',
             techStack: ['Next.js', 'PostgreSQL', 'Prisma'],
-            githubLink: '#',
-            liveLink: '#',
+            githubLink: 'https://github.com/TheRakshitRaj/AcuityMD',
+            liveLink: 'https://acuitymd.netlify.app/',
+            youtubeLink: '',
             image: 'https://res.cloudinary.com/dphtrtpjx/image/upload/v1770114269/Screenshot_2026-02-03_155103_gfgvxu.png'
         }
     ];
@@ -113,6 +117,11 @@ const Projects = () => {
                                     {projects[activeId].liveLink && (
                                         <a href={projects[activeId].liveLink} target="_blank" rel="noopener noreferrer" className="preview-btn primary">
                                             <FaExternalLinkAlt /> Live Demo
+                                        </a>
+                                    )}
+                                    {projects[activeId].youtubeLink && (
+                                        <a href={projects[activeId].youtubeLink} target="_blank" rel="noopener noreferrer" className="preview-btn youtube">
+                                            <FaYoutube /> Video
                                         </a>
                                     )}
                                 </div>
