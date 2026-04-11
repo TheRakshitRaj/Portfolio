@@ -16,46 +16,39 @@ const Certificates = () => {
 
     const certificates = [
         {
+            title: 'Doppleganger',
+            issuer: 'Online Hackathon',
+            date: '2026',
+            image: "https://res.cloudinary.com/dphtrtpjx/image/upload/v1775907289/Screenshot_2026-04-11_170410_aw9bvq.png",
+            description: 'Developed an innovative AI-powered solution for accessibility.'
+        },
+        {
+            title: 'Oddo x Indus Hackathon',
+            issuer: 'Indus University',
+            date: '2026',
+            image: "https://res.cloudinary.com/dphtrtpjx/image/upload/v1775906108/odoo_x_indus_certificate_fhrthk.jpg",
+            description: 'Built an Inventory Management System in a 48-hour sprint.'
+        },
+        {
             title: 'ElectroSphere 2K26',
             issuer: 'Swaminarayan University',
             date: 'Jan 2026',
             image: "https://res.cloudinary.com/dphtrtpjx/image/upload/v1770272796/ElectroSpehere-Certificate_snhsp2.png",
-            description: 'Comprehensive course covering React Hooks, Redux, Context API, and Next.js.'
+            description: '1st Prize Winner. Developed AI-based object detection software.'
         },
         {
-            title: 'AWS Certified Developer',
-            issuer: 'AWS',
+            title: 'DevHeat IIIT Surat',
+            issuer: 'IIIT Surat',
+            date: '2026',
+            image: "https://res.cloudinary.com/dphtrtpjx/image/upload/v1775906134/DevHeat_xgsgxo.jpg",
+            description: 'Collaborated to build an innovative project under competitive conditions.'
+        },
+        {
+            title: 'C Programming Course – SoloLearn',
+            issuer: 'SoloLearn',
             date: 'Dec 2023',
-            image: null,
-            description: 'Validated expertise in developing, deploying, and debugging cloud-based applications using AWS.'
-        },
-        {
-            title: 'Full Stack Web Dev',
-            issuer: 'Coursera',
-            date: 'Nov 2023',
-            image: null,
-            description: 'Mastery of full-stack technologies including Node.js, Express, and SQL/NoSQL databases.'
-        },
-        {
-            title: 'JS Algorithms',
-            issuer: 'freeCodeCamp',
-            date: 'Oct 2023',
-            image: null,
-            description: 'In-depth problem solving with JavaScript, data structures, and algorithmic thinking.'
-        },
-        {
-            title: 'UI/UX Design',
-            issuer: 'Google',
-            date: 'Sep 2023',
-            image: null,
-            description: 'Learned the foundations of user experience design, including wireframing and prototyping.'
-        },
-        {
-            title: 'Node.js Services',
-            issuer: 'OpenJS',
-            date: 'Aug 2023',
-            image: null,
-            description: 'Building scalable network applications and RESTful APIs using Node.js.'
+            image: "https://res.cloudinary.com/dphtrtpjx/image/upload/v1775910188/4b022cce-36d1-44e8-a83f-b6aa986fb433_mn4gzg.png",
+            description: 'Successfully completed a C programming course on SoloLearn, gaining a strong understanding of core concepts such as variables, data types, control structures, functions, and basic problem-solving.'
         }
     ];
 
