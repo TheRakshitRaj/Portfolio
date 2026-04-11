@@ -5,28 +5,44 @@ import './About.css';
 import { motion } from 'framer-motion';
 
 import {
-    SiReact, SiJavascript, SiTypescript, SiTailwindcss, SiHtml5, SiCss3,
-    SiNodedotjs, SiExpress, SiPython, SiMongodb, SiPostgresql,
-    SiGit, SiDocker, SiFigma, SiFirebase, SiNextdotjs, SiGraphql, SiRedux
+    SiReact, SiJavascript, SiTypescript, SiTailwindcss,
+    SiNodedotjs, SiPython, SiMongodb,
+    SiGit, SiDocker, SiFigma, SiNextdotjs, SiSolidity
 } from 'react-icons/si';
 
 import { FaAws, FaJava } from 'react-icons/fa';
 
 const Skills = () => {
-    // Define skills with colors and sizes for the bento grid
-    const skills = [
-        { title: 'React', icon: <SiReact />, color: '#61DAFB', size: 'wide', category: 'Frontend' },
-        { title: 'Node.js', icon: <SiNodedotjs />, color: '#339933', size: 'md', category: 'Backend' },
-        { title: 'JavaScript', icon: <SiJavascript />, color: '#F7DF1E', size: 'sm', category: 'Language' },
-        { title: 'TypeScript', icon: <SiTypescript />, color: '#3178C6', size: 'sm', category: 'Language' },
-        { title: 'MongoDB', icon: <SiMongodb />, color: '#47A248', size: 'tall', category: 'Database' },
-        { title: 'Next.js', icon: <SiNextdotjs />, color: '#ffffff', size: 'wide', category: 'Frontend' },
-        { title: 'Tailwind', icon: <SiTailwindcss />, color: '#06B6D4', size: 'sm', category: 'Frontend' },
-        { title: 'AWS', icon: <FaAws />, color: '#FF9900', size: 'md', category: 'Cloud' },
-        { title: 'Git', icon: <SiGit />, color: '#F05032', size: 'sm', category: 'Tool' },
-        { title: 'Docker', icon: <SiDocker />, color: '#2496ED', size: 'sm', category: 'Tool' },
-        { title: 'Python', icon: <SiPython />, color: '#3776AB', size: 'md', category: 'Language' },
-        { title: 'Figma', icon: <SiFigma />, color: '#F24E1E', size: 'sm', category: 'Design' },
+    const skillCategories = [
+        {
+            title: "Frontend",
+            skills: [
+                { title: 'React', icon: <SiReact />, color: '#61DAFB', size: 'wide' },
+                { title: 'Next.js', icon: <SiNextdotjs />, color: '#ffffff', size: 'tall' },
+                { title: 'Tailwind', icon: <SiTailwindcss />, color: '#06B6D4', size: 'sm' },
+                { title: 'JavaScript', icon: <SiJavascript />, color: '#F7DF1E', size: 'sm' },
+                { title: 'TypeScript', icon: <SiTypescript />, color: '#3178C6', size: 'wide' },
+            ]
+        },
+        {
+            title: "Backend",
+            skills: [
+                { title: 'Node.js', icon: <SiNodedotjs />, color: '#339933', size: 'wide' },
+                { title: 'MongoDB', icon: <SiMongodb />, color: '#47A248', size: 'tall' },
+                { title: 'Python', icon: <SiPython />, color: '#3776AB', size: 'sm' },
+                { title: 'Java', icon: <FaJava />, color: '#007396', size: 'sm' },
+                { title: 'Solidity', icon: <SiSolidity />, color: '#627EEA', size: 'wide' }, // Ethereum Blue/Purple
+            ]
+        },
+        {
+            title: "Tools & DevOps",
+            skills: [
+                { title: 'AWS', icon: <FaAws />, color: '#FF9900', size: 'wide' },
+                { title: 'Git', icon: <SiGit />, color: '#F05032', size: 'tall' },
+                { title: 'Docker', icon: <SiDocker />, color: '#2496ED', size: 'tall' },
+                { title: 'Figma', icon: <SiFigma />, color: '#F24E1E', size: 'wide' },
+            ]
+        }
     ];
 
     return (
@@ -46,13 +62,28 @@ const Skills = () => {
                 </p>
             </motion.div>
 
-            <div className="bento-grid-container">
-                {skills.map((skill, index) => (
-                    <BentoItem
-                        key={index}
-                        {...skill}
-                        delay={index}
-                    />
+            <div className="skills-horizontal-container">
+                {skillCategories.map((category, catIndex) => (
+                    <div key={catIndex} className="skill-category-group">
+                        <motion.h3
+                            className="category-subtitle"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            viewport={{ once: true }}
+                        >
+                            <span className="category-subtitle-text">{category.title}</span>
+                        </motion.h3>
+                        <div className="bento-grid-container">
+                            {category.skills.map((skill, index) => (
+                                <BentoItem
+                                    key={index}
+                                    {...skill}
+                                    delay={index}
+                                />
+                            ))}
+                        </div>
+                    </div>
                 ))}
             </div>
 
