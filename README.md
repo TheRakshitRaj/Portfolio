@@ -1,16 +1,72 @@
-# React + Vite
+🚀 Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive portfolio website built using React, styled with Tailwind CSS, and animated using Framer Motion.
+This project showcases my projects, skills, and contact information in an interactive and visually appealing way.
 
-Currently, two official plugins are available:
+🌐 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 View Portfolio
 
-## React Compiler
+(Add your deployed link here — e.g. Vercel / Netlify)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+✨ Features
+⚡ Fully responsive design (mobile + desktop)
+🎨 Clean UI with Tailwind CSS
+🎬 Smooth animations using Framer Motion
+📂 Projects showcase section
+👨‍💻 About Me section
+📬 Contact section
+🌙 Modern and minimal design
+🛠️ Tech Stack
+Frontend: React.js
+Styling: Tailwind CSS
+Animations: Framer Motion
+Deployment: Vercel / Netlify
+📁 Folder Structure
+portfolio/
+│── public/
+│── src/
+│   ├── components/
+│   ├── pages/
+│   ├── assets/
+│   ├── App.js
+│   └── index.js
+│── package.json
+⚙️ Installation & Setup
+Clone the repository
+git clone https://github.com/your-username/portfolio.git
+Navigate to the project directory
+cd portfolio
+Install dependencies
+npm install
+Run the development server
+npm start
+🎬 Animations (Framer Motion)
 
-## Expanding the ESLint configuration
+Used Framer Motion for:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Page transitions
+Hover effects
+Scroll animations
+Component entry animations
+🎨 Styling (Tailwind CSS)
+Utility-first CSS framework
+Responsive design
+Fast UI development
+Custom themes and colors
+
+🚀 Deployment
+
+You can deploy this project easily using:
+
+Vercel
+Netlify
+GitHub Pages
+📬 Contact
+
+This project is open source and available under the MIT License.
+
+⭐ Acknowledgements
+Inspiration from modern portfolio designs
+Framer Motion documentation
+Tailwind CSS documentation
