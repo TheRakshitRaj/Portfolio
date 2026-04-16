@@ -1,0 +1,120 @@
+.figma-section {
+    padding: 5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.figma-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.75rem;
+    margin-top: 3rem;
+}
+
+.figma-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.figma-card:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+/* Preview wrapper with zoom-on-hover */
+.figma-preview-wrapper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.figma-preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+.figma-card:hover .figma-preview-img {
+    transform: scale(1.07);
+}
+
+/* Hover overlay with CTA */
+.figma-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(3px);
+}
+
+.figma-card:hover .figma-overlay {
+    opacity: 1;
+}
+
+.figma-link-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: #1E1E1E;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.figma-link-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Card body */
+.figma-card-body {
+    padding: 1.25rem;
+}
+
+.figma-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 0.4rem;
+}
+
+.figma-card-desc {
+    font-size: 0.83rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 0 0.75rem;
+    line-height: 1.5;
+}
+
+.figma-external-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.figma-external-link:hover {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 640px) {
+    .figma-grid {
+        grid-template-columns: 1fr;
+    }
+}
