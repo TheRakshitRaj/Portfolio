@@ -1,6 +1,6 @@
 .projects-section-cinematic {
-    padding: 100px 5%;
-    min-height: 100vh;
+    padding: 70px 5%;
+    min-height: auto;
 }
 
 /* Cinematic Container */
@@ -10,30 +10,80 @@
     max-width: 1200px;
     margin: 0 auto;
     align-items: flex-start;
-    height: 600px;
-    /* Fixed height container */
+    height: calc(100vh - 240px);
+    min-height: 450px;
+    max-height: 600px;
 }
 
-/* Left List */
-.project-list {
+.project-list-wrapper {
     flex: 0 0 35%;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 5%, black 95%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+}
+
+.project-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px 0;
+    gap: 12px;
+    padding: 10px 10px 10px 0;
+    max-height: calc(4 * 80px); /* Exactly 4 * New CARD_HEIGHT (65px + 12px gap) */
+    overflow-y: auto;
+    scrollbar-width: thin;
+    overscroll-behavior: contain;
+    width: 100%;
+}
+
+/* Premium Liquid Glass Scrollbar */
+.project-list::-webkit-scrollbar {
+    width: 6px;
+    margin-right: 4px;
+}
+.project-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+}
+.project-list::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg, 
+        rgba(255, 255, 255, 0.2) 0%, 
+        rgba(41, 151, 255, 0.2) 50%, 
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+        inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.4);
+}
+.project-list::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        180deg, 
+        rgba(255, 255, 255, 0.3) 0%, 
+        rgba(41, 151, 255, 0.4) 50%, 
+        rgba(255, 255, 255, 0.2) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 
+        inset 1px 1px 3px rgba(255, 255, 255, 0.5),
+        0 0 10px rgba(41, 151, 255, 0.3);
 }
 
 .project-list-item {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 20px;
-    border-radius: 16px;
+    gap: 16px;
+    padding: 12px;
+    border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
     border: 1px solid transparent;
     position: relative;
     overflow: hidden;
+    flex-shrink: 0;
+    height: 65px; /* Smaller exact constant CARD_HEIGHT */
+    box-sizing: border-box;
 }
 
 .project-list-item:hover {
@@ -60,10 +110,10 @@
 }
 
 .project-list-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--text-secondary);
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     transition: color 0.3s;
 }
 
@@ -72,7 +122,7 @@
 }
 
 .project-list-tech {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--text-tertiary);
 }
 
@@ -235,4 +285,61 @@
         max-width: 600px;
         margin: 0 auto;
     }
+}
+
+/* ── Category Tabs ─────────────────────────────────────────────────── */
+.projects-tabs {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.projects-tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.55rem 1.25rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.83rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.projects-tab-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.projects-tab-btn.active {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(41, 151, 255, 0.3);
+}
+
+/* ── Tech badges in preview content ───────────────────────────────── */
+.preview-tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.2rem;
+}
+
+.tech-badge {
+    padding: 0.25rem 0.7rem;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 500;
 }
