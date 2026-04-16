@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+/* ───────────────────────────────────────────────────────────────────────────
+   OVERLAY  — pure black, full-screen, highest z-index
+─────────────────────────────────────────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   1. BACKGROUND GRID  (fade in 0 → 0.6 s)
+─────────────────────────────────────────────────────────────────────────── */
+.grid line {
+  stroke: rgba(255, 255, 255, 0.035);
+  stroke-width: 0.4;
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+  /* all grid lines fade together */
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   2. CONCENTRIC CIRCLES  (rise from below 0.5 → 1.6 s, staggered)
+─────────────────────────────────────────────────────────────────────────── */
+.circles circle {
+  fill: none;
+  stroke-width: 0.6;
+  stroke-dasharray: 4 8;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* dashed style varies per circle for depth */
+.circ0 { stroke: rgba(255,255,255,0.06); stroke-dasharray: 4 8;  animation: riseIn 1.1s ease-out both; animation-delay: 0.45s; }
+.circ1 { stroke: rgba(255,255,255,0.08); stroke-dasharray: 3 6;  animation: riseIn 1.1s ease-out both; animation-delay: 0.60s; }
+.circ2 { stroke: rgba(255,255,255,0.10); stroke-dasharray: 2 5;  animation: riseIn 1.1s ease-out both; animation-delay: 0.75s; }
+.circ3 { stroke: rgba(255,255,255,0.12); stroke-dasharray: 2 4;  animation: riseIn 1.1s ease-out both; animation-delay: 0.90s; }
+
+/* ───────────────────────────────────────────────────────────────────────────
+   3. DIAGONAL CONSTRUCTION LINES  (fade in, staggered groups)
+─────────────────────────────────────────────────────────────────────────── */
+.diag1 line,
+.diag2 line,
+.diag3 line {
+  opacity: 0;
+}
+
+/* Main cross diagonals */
+.diag1 line {
+  stroke: rgba(255, 255, 255, 0.055);
+  stroke-width: 0.5;
+  animation: fadeIn 0.8s ease-out both;
+}
+.diag1 line:nth-child(1) { animation-delay: 0.80s; }
+.diag1 line:nth-child(2) { animation-delay: 0.95s; }
+
+/* Secondary diagonals */
+.diag2 line {
+  stroke: rgba(255, 255, 255, 0.04);
+  stroke-width: 0.4;
+  animation: fadeIn 0.8s ease-out both;
+}
+.diag2 line:nth-child(1) { animation-delay: 1.05s; }
+.diag2 line:nth-child(2) { animation-delay: 1.15s; }
+
+/* Horizontal band guides */
+.diag3 line {
+  stroke: rgba(255, 255, 255, 0.07);
+  stroke-width: 0.4;
+  animation: fadeIn 0.7s ease-out both;
+}
+.diag3 line:nth-child(1) { animation-delay: 1.10s; }
+.diag3 line:nth-child(2) { animation-delay: 1.20s; }
+.diag3 line:nth-child(3) { animation-delay: 1.30s; }
+
+/* ───────────────────────────────────────────────────────────────────────────
+   4. DOUBLE BORDER FRAME  (fade in 1.8 → 2.5 s)
+─────────────────────────────────────────────────────────────────────────── */
+.frame rect {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.13);
+  stroke-width: 0.8;
+  opacity: 0;
+  animation: fadeIn 0.7s ease-out both;
+}
+.frame rect:nth-child(1) { animation-delay: 1.80s; }
+.frame rect:nth-child(2) { animation-delay: 2.10s; }
+
+/* ───────────────────────────────────────────────────────────────────────────
+   5. LETTER R GROUP
+   – shoots up from 60px below with overshoot bounce (1.5 → 3.3 s)
+   – then bobs ±10px perpetually from 3.8 s
+─────────────────────────────────────────────────────────────────────────── */
+.letterGroup {
+  transform-box: fill-box;
+  transform-origin: center;
+
+  animation-name:            shootUp,      bob;
+  animation-duration:        1.8s,         5.5s;
+  animation-delay:           1.50s,        3.80s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1), ease-in-out;
+  animation-fill-mode:       both,         none;
+  animation-iteration-count: 1,            infinite;
+}
+
+/* ── OUTER R STROKES  (thick, near-white) ── */
+.outerR path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.92);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  /* stroke width is different per stroke type — set via nth-child below */
+  stroke-width: 2;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: drawStroke 0.60s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Stem and bowl are thicker */
+.outerR path:nth-child(1) { stroke-width: 2.5; animation-delay: 1.50s; } /* Stem          */
+.outerR path:nth-child(2) { stroke-width: 2.0; animation-delay: 1.80s; } /* Top cap       */
+.outerR path:nth-child(3) { stroke-width: 2.5; animation-delay: 2.05s; } /* Bowl arc      */
+.outerR path:nth-child(4) { stroke-width: 2.0; animation-delay: 2.35s; } /* Crossbar      */
+.outerR path:nth-child(5) { stroke-width: 2.5; animation-delay: 2.55s; } /* Diagonal leg  */
+.outerR path:nth-child(6) { stroke-width: 1.5; animation-delay: 2.75s; } /* Baseline left */
+.outerR path:nth-child(7) { stroke-width: 1.5; animation-delay: 2.85s; } /* Baseline right*/
+
+/* ── INNER R STROKES  (thin, ghosted) ── */
+.innerR path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.36);
+  stroke-width: 0.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: drawStroke 0.60s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.innerR path:nth-child(1) { animation-delay: 1.65s; }
+.innerR path:nth-child(2) { animation-delay: 1.95s; }
+.innerR path:nth-child(3) { animation-delay: 2.20s; }
+.innerR path:nth-child(4) { animation-delay: 2.50s; }
+.innerR path:nth-child(5) { animation-delay: 2.70s; }
+.innerR path:nth-child(6) { animation-delay: 2.90s; }
+.innerR path:nth-child(7) { animation-delay: 3.00s; }
+
+/* ───────────────────────────────────────────────────────────────────────────
+   6. TAGLINE
+─────────────────────────────────────────────────────────────────────────── */
+.tagline {
+  position: absolute;
+  bottom: 11%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: none;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0);
+  transition: color 0.8s ease-out;
+  pointer-events: none;
+  user-select: none;
+}
+
+.taglineVisible {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   KEYFRAMES
+─────────────────────────────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(70px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes shootUp {
+  /* Starts 55px below, invisible; natural overshoot from cubic-bezier */
+  0%   { opacity: 0; transform: translateY(55px); }
+  8%   { opacity: 1; }
+  100% { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0);     }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes drawStroke {
+  from { stroke-dashoffset: 1; }
+  to   { stroke-dashoffset: 0; }
+}
