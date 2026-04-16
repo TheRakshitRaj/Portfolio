@@ -7,7 +7,7 @@ This project showcases my projects, skills, and contact information in an intera
 
 👉 View Portfolio
 
-(Add your deployed link here — e.g. Vercel / Netlify)
+https://portfolio-chi-fawn-37.vercel.app/
 
 ✨ Features
 ⚡ Fully responsive design (mobile + desktop)
