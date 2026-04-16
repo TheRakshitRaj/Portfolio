@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
     const [formStatus, setFormStatus] = useState('');
     const formRef = useRef(null);
 
@@ -18,7 +18,7 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!formData.name || !formData.email || !formData.message) {
+        if (!formData.name || !formData.email || !formData.subject || !formData.message) {
             setFormStatus('error:Please fill in all fields');
             return;
         }
@@ -36,6 +36,7 @@ const Contact = () => {
                 from_name: formData.name,
                 to_name: 'Rakshit',
                 from_email: formData.email,
+                subject: formData.subject,
                 to_email: 'rakshit.raj.cg@gmail.com',
                 message: formData.message,
             },
@@ -43,7 +44,7 @@ const Contact = () => {
         )
         .then(() => {
             setFormStatus('success:Message sent successfully!');
-            setFormData({ name: '', email: '', message: '' });
+            setFormData({ name: '', email: '', subject: '', message: '' });
             setTimeout(() => setFormStatus(''), 3000);
         })
         .catch((error) => {
@@ -117,6 +118,19 @@ const Contact = () => {
                                 onChange={handleChange}
                                 className="form-input"
                                 placeholder="name@example.com"
+                            />
+                        </motion.div>
+
+                        <motion.div className="form-group" variants={itemVariants}>
+                            <label htmlFor="subject" className="form-label">Subject</label>
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                value={formData.subject}
+                                onChange={handleChange}
+                                className="form-input"
+                                placeholder="What's this about?"
                             />
                         </motion.div>
 
