@@ -289,3 +289,112 @@
         transform: translateX(-50%) translateY(-5px);
     }
 }
+
+/* ── Typewriter ──────────────────────────────────────────────────────── */
+.hero-typewriter {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 24px;
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    color: var(--accent-primary);
+    font-weight: 300;
+    font-size: 24px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
+/* ── Resume Modal ────────────────────────────────────────────────────── */
+.resume-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    backdrop-filter: blur(6px);
+}
+
+.resume-modal {
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.25rem;
+    width: 100%;
+    max-width: 860px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+}
+
+.resume-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+}
+
+.resume-modal-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.02em;
+}
+
+.resume-modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.resume-download-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.5rem;
+    color: #fff;
+    font-size: 0.82rem;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.resume-download-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.resume-close-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.resume-close-btn:hover {
+    color: #fff;
+}
+
+.resume-iframe {
+    flex: 1;
+    width: 100%;
+    border: none;
+    background: #1a1a1a;
+}
