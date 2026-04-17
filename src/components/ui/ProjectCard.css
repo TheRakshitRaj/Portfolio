@@ -79,11 +79,12 @@
     display: flex;
     gap: 12px;
     margin-top: auto;
-    opacity: 0.8;
+    opacity: 1; /* Always visible */
     transition: opacity 0.3s;
 }
 
 .glass-card-hover:hover .project-links {
+    opacity: 1;
 }
 
 .project-links .h-link {

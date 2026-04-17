@@ -162,7 +162,12 @@ const Projects = () => {
                                 >
                                     <span className="project-list-num">0{filtered.indexOf(project) + 1}</span>
                                     <div className="project-list-info">
-                                        <h3 className="project-list-title">{project.title}</h3>
+                                        <h3 className="project-list-title">
+                                            {project.title}
+                                            {project.youtubeLink && (
+                                                <FaYoutube style={{ marginLeft: '10px', color: '#ff3333', fontSize: '1.1em', verticalAlign: 'middle' }} title="Video Available" />
+                                            )}
+                                        </h3>
                                         <div className="project-list-tech">{project.techStack.slice(0, 3).join(' • ')}</div>
                                     </div>
                                     <div className={`project-list-indicator ${activeProject?.id === project.id ? 'active' : ''}`} />
