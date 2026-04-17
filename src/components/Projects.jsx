@@ -15,7 +15,7 @@ const ALL_PROJECTS = [
         techStack: ['React', 'GSAP', 'CSS3', 'HTML5'],
         githubLink: 'https://github.com/TheRakshitRaj/Porsche-clone',
         liveLink: 'https://symphonious-croissant-ee6dd4.netlify.app/',
-        youtubeLink: '',
+        youtubeLink: 'https://youtu.be/JHDEyyfzUTk?si=EAihsD2GG1OKk2HG',
         image: 'https://res.cloudinary.com/dphtrtpjx/image/upload/v1770114279/Screenshot_2026-02-03_154955_fg1sqo.png',
     },
     {
@@ -26,7 +26,7 @@ const ALL_PROJECTS = [
         techStack: ['React', 'Firebase', 'MUI', 'Redux'],
         githubLink: 'https://github.com/TheRakshitRaj/Blix_clone',
         liveLink: 'https://blix-clone.netlify.app/',
-        youtubeLink: '',
+        youtubeLink: 'https://youtu.be/JHDEyyfzUTk?si=EAihsD2GG1OKk2HG',
         image: 'https://res.cloudinary.com/dphtrtpjx/image/upload/v1770114269/Screenshot_2026-02-03_155233_p4mons.png',
     },
     {
@@ -37,7 +37,7 @@ const ALL_PROJECTS = [
         techStack: ['React', 'REST API', 'Chart.js', 'CSS3'],
         githubLink: 'https://github.com/TheRakshitRaj/NZXT_Clone',
         liveLink: 'https://nzxt-clone-rr.netlify.app/',
-        youtubeLink: '',
+        youtubeLink: 'https://youtu.be/JHDEyyfzUTk?si=EAihsD2GG1OKk2HG',
         image: 'https://res.cloudinary.com/dphtrtpjx/image/upload/v1770114269/Screenshot_2026-02-03_155159_x7ixos.png',
     },
     {
@@ -48,7 +48,7 @@ const ALL_PROJECTS = [
         techStack: ['Next.js', 'PostgreSQL', 'Prisma', 'Tailwind'],
         githubLink: 'https://github.com/TheRakshitRaj/AcuityMD',
         liveLink: 'https://acuitymd.netlify.app/',
-        youtubeLink: '',
+        youtubeLink: 'https://youtu.be/JHDEyyfzUTk?si=EAihsD2GG1OKk2HG',
         postmanLink: '',
         image: 'https://res.cloudinary.com/dphtrtpjx/image/upload/v1770114269/Screenshot_2026-02-03_155103_gfgvxu.png',
     },
@@ -60,7 +60,7 @@ const ALL_PROJECTS = [
         techStack: ['React', 'Node.js', 'MongoDB', 'Express'],
         githubLink: 'https://github.com/TheRakshitRaj',
         liveLink: '#',
-        youtubeLink: '',
+        youtubeLink: 'https://youtu.be/JHDEyyfzUTk?si=EAihsD2GG1OKk2HG',
         postmanLink: '',
         image: 'https://res.cloudinary.com/dphtrtpjx/image/upload/v1770114269/Screenshot_2026-02-03_155103_gfgvxu.png',
     },
@@ -72,7 +72,7 @@ const ALL_PROJECTS = [
         techStack: ['React', 'Framer Motion', 'CSS Modules'],
         githubLink: 'https://github.com/TheRakshitRaj',
         liveLink: '#',
-        youtubeLink: '',
+        youtubeLink: 'https://youtu.be/JHDEyyfzUTk?si=EAihsD2GG1OKk2HG',
         image: 'https://res.cloudinary.com/dphtrtpjx/image/upload/v1770114279/Screenshot_2026-02-03_154955_fg1sqo.png',
     },
     {
@@ -83,7 +83,7 @@ const ALL_PROJECTS = [
         techStack: ['JavaScript', 'HTML5 Canvas', 'CSS3'],
         githubLink: 'https://github.com/TheRakshitRaj',
         liveLink: '#',
-        youtubeLink: '',
+        youtubeLink: 'https://youtu.be/JHDEyyfzUTk?si=EAihsD2GG1OKk2HG',
         image: 'https://res.cloudinary.com/dphtrtpjx/image/upload/v1770114269/Screenshot_2026-02-03_155233_p4mons.png',
     },
 ];
@@ -197,22 +197,22 @@ const Projects = () => {
                                         <div className="preview-actions">
                                             {activeProject.githubLink && (
                                                 <a href={activeProject.githubLink} target="_blank" rel="noopener noreferrer" className="preview-btn">
-                                                    <FaGithub /> Source
+                                                    <FaGithub /> <span>Source</span>
                                                 </a>
                                             )}
                                             {activeProject.liveLink && activeProject.liveLink !== '#' && (
                                                 <a href={activeProject.liveLink} target="_blank" rel="noopener noreferrer" className="preview-btn primary">
-                                                    <FaExternalLinkAlt /> Live Demo
+                                                    <FaExternalLinkAlt /> <span>Live Demo</span>
                                                 </a>
                                             )}
                                             {activeProject.youtubeLink && (
                                                 <a href={activeProject.youtubeLink} target="_blank" rel="noopener noreferrer" className="preview-btn youtube">
-                                                    <FaYoutube /> Video
+                                                    <FaYoutube /> <span>Video</span>
                                                 </a>
                                             )}
                                             {activeProject.postmanLink && (
                                                 <a href={activeProject.postmanLink} target="_blank" rel="noopener noreferrer" className="preview-btn">
-                                                    📄 API Docs
+                                                    📄 <span>API Docs</span>
                                                 </a>
                                             )}
                                         </div>

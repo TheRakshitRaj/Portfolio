@@ -1,6 +1,7 @@
 import React from 'react';
 import GlassCard from './GlassCard';
 import Button from './Button';
+import { FaGithub, FaExternalLinkAlt, FaYoutube } from 'react-icons/fa';
 import './ProjectCard.css';
 
 const ProjectCard = ({ title, description, techStack = [], githubLink, liveLink, youtubeLink, image }) => {
@@ -43,19 +44,22 @@ const ProjectCard = ({ title, description, techStack = [], githubLink, liveLink,
             {/* Links */}
             <div className="project-links">
                 {githubLink && (
-                    <Button variant="outline" href={githubLink} className="text-sm py-2">
-                        GitHub →
-                    </Button>
+                    <a href={githubLink} target="_blank" rel="noopener noreferrer" className="h-link h-github" title="GitHub Repo">
+                        <FaGithub />
+                        <span>GitHub</span>
+                    </a>
                 )}
-                {liveLink && (
-                    <Button variant="primary" href={liveLink} className="text-sm py-2">
-                        Live Demo →
-                    </Button>
+                {liveLink && liveLink !== '#' && (
+                    <a href={liveLink} target="_blank" rel="noopener noreferrer" className="h-link h-deploy" title="Live Deploy">
+                        <FaExternalLinkAlt />
+                        <span>Deploy</span>
+                    </a>
                 )}
                 {youtubeLink && (
-                    <Button variant="outline" href={youtubeLink} className="text-sm py-2" style={{ borderColor: 'rgba(255, 0, 0, 0.4)', color: '#ff3333' }}>
-                        Video →
-                    </Button>
+                    <a href={youtubeLink} target="_blank" rel="noopener noreferrer" className="h-link h-youtube" title="YouTube Video">
+                        <FaYoutube />
+                        <span>Video</span>
+                    </a>
                 )}
             </div>
         </GlassCard>
