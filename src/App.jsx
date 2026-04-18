@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Figma from './components/Figma';
 import Hackathons from './components/Hackathons';
 import Certificates from './components/Certificates';
 import Achievements from './components/Achievements';
@@ -47,6 +48,7 @@ function App() {
                             <About />
                             <Skills />
                             <Projects />
+                            <Figma />
                             <Hackathons />
                             <Certificates />
                             <Achievements />

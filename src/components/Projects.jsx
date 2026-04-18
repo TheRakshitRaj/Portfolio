@@ -89,11 +89,11 @@ const ALL_PROJECTS = [
 ];
 
 const TABS = [
-    { key: 'all',      label: 'All',        icon: <FaThLarge /> },
-    { key: 'games',    label: 'Games',      icon: <FaGamepad /> },
-    { key: 'clones',   label: 'Clones',     icon: <FaCopy /> },
-    { key: 'fullstack',label: 'Full Stack', icon: <FaLayerGroup /> },
-    { key: 'frontend', label: 'Frontend',   icon: <FaDesktop /> },
+    { key: 'all', label: 'All', icon: <FaThLarge /> },
+    { key: 'games', label: 'Games', icon: <FaGamepad /> },
+    { key: 'clones', label: 'Clones', icon: <FaCopy /> },
+    { key: 'fullstack', label: 'Full Stack', icon: <FaLayerGroup /> },
+    { key: 'frontend', label: 'Frontend', icon: <FaDesktop /> },
 ];
 
 const Projects = () => {
